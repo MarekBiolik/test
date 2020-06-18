@@ -1,0 +1,7 @@
+sudo: required
+services:
+    - docker
+
+script:
+    - docker build -t maro2511/node .
+    - docker images maro2511/node
