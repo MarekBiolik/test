@@ -5,3 +5,12 @@ services:
 script:
     - docker build -t maro2511/node .
     - docker images maro2511/node
+
+before_deploy:
+    - docker login -u maro2511 -p Silmarillion_12
+
+deploy:
+    provider: script
+    script: docker push maro2511/node
+    on:
+        branch: master
